@@ -3,8 +3,13 @@ package WinterGame;
 import org.newdawn.slick.*;
 import org.newdawn.slick.tests.AnimationTest;
 
+import java.util.List;
+
 public class MainGame extends BasicGame {
+    private CircleActor ca1,ca2;
+    private RectActor ra1,ra2;
     private int x,y;
+
 
 
 
@@ -14,21 +19,30 @@ public class MainGame extends BasicGame {
 
     @Override
     public void init(GameContainer gameContainer) throws SlickException {
-        this.x=100;
-        this.y=100;
+       this.ca1 = new CircleActor(100,100);
+       this.ca2 = new CircleActor(100,200);
+       this.ra1 = new RectActor(100,300);
+       this.ra2 = new RectActor(100,400);
+
 
     }
 
     @Override
     public void update(GameContainer gameContainer, int delta) throws SlickException {
-        this.x++;
+        this.ca1.update(gameContainer,delta);
+        this.ca2.update(gameContainer,delta);
+        this.ra1.update(gameContainer,delta);
+        this.ra2.update(gameContainer,delta);
 
 
     }
 
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
-        graphics.drawRect(this.x,this.y,50,50);
+        this.ca1.render(graphics);
+        this.ca2.render(graphics);
+        this.ra1.render(graphics);
+        this.ra2.render(graphics);
 
     }
 
