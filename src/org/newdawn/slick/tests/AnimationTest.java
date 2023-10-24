@@ -36,7 +36,7 @@ public class AnimationTest extends BasicGame {
 		super("Animation Test");
 	}
 	
-	/**
+	/**.
 	 * @see org.newdawn.slick.BasicGame#init(org.newdawn.slick.GameContainer)
 	 */
 	public void init(GameContainer container) throws SlickException {
