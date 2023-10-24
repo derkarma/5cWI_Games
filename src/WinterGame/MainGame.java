@@ -7,6 +7,7 @@ public class MainGame extends BasicGame {
     private int x,y;
 
 
+
     public MainGame(String title) {
         super(title);
     }
