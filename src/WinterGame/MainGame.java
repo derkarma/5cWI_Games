@@ -1,54 +1,60 @@
 package WinterGame;
 
 import org.newdawn.slick.*;
-import org.newdawn.slick.tests.AnimationTest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainGame extends BasicGame {
-    private CircleActor ca1,ca2;
-    private RectActor ra1,ra2;
-    private int x,y;
+    private static List<Actor> actors;
 
 
 
 
-    public MainGame(String title) {
+    public MainGame(String title, List<Actor> actors) {
         super(title);
+        this.actors = actors;
     }
 
     @Override
-    public void init(GameContainer gameContainer) throws SlickException {
-       this.ca1 = new CircleActor(100,100);
-       this.ca2 = new CircleActor(100,200);
-       this.ra1 = new RectActor(100,300);
-       this.ra2 = new RectActor(100,400);
+    public void init(GameContainer gameContainer) throws SlickException {this.actors = new ArrayList<>();
+        this.actors.add(new CircleActor(50,100));
+        this.actors.add(new CircleActor(300,200));
+        this.actors.add(new CircleActor(450,200));
+        this.actors.add(new CircleActor(700,200));
+        this.actors.add(new RectActor(200,300));
+        this.actors.add(new  RectActor(350,400));
+        this.actors.add(new RectActor(623,300));
+        this.actors.add(new  RectActor(820,400));
+        this.actors.add(new OvalActor(180,20));
+        this.actors.add(new OvalActor(480,20));
+        this.actors.add(new OvalActor(310,20));
+        this.actors.add(new OvalActor(560,20));
 
 
     }
 
     @Override
     public void update(GameContainer gameContainer, int delta) throws SlickException {
-        this.ca1.update(gameContainer,delta);
-        this.ca2.update(gameContainer,delta);
-        this.ra1.update(gameContainer,delta);
-        this.ra2.update(gameContainer,delta);
+        for (Actor actor : this.actors){
+            actor.update(gameContainer, delta);
+        }
 
 
     }
 
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
-        this.ca1.render(graphics);
-        this.ca2.render(graphics);
-        this.ra1.render(graphics);
-        this.ra2.render(graphics);
+        for (Actor actor : this.actors){
+            actor.render(graphics);
+        }
+
 
     }
 
     public static void main(String[] argv) {
         try {
-            AppGameContainer container = new AppGameContainer(new MainGame("Wintergame"));
+            AppGameContainer container = new AppGameContainer(new MainGame("Wintergame", actors));
             container.setDisplayMode(800,600,false);
             container.start();
         } catch (SlickException e) {

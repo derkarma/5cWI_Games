@@ -3,7 +3,7 @@ package WinterGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
-public class RectActor {
+public class RectActor implements Actor{
     private double x,y;
 
     public RectActor(double x, double y) {
@@ -12,7 +12,10 @@ public class RectActor {
     }
 
     public void update(GameContainer gameContainer, int delta){
-        this.x++;
+        this.y += 0.4;
+        if(this.y > 600){
+            this.y = -10;
+        }
     }
 
     public void render(Graphics graphics){
