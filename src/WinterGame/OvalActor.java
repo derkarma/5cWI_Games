@@ -13,7 +13,7 @@ public class OvalActor implements Actor{
 
     @Override
     public void update(GameContainer gameContainer, int delta) {
-        this.y += 0.3;
+        this.y += 0.2;
         if(this.y > 600){
             this.y = -10;
         }
@@ -22,7 +22,7 @@ public class OvalActor implements Actor{
 
     @Override
     public void render(Graphics graphics) {
-        graphics.drawRoundRect((float)this.x,(float)this.y,50,50,150);
+        graphics.drawRoundRect((float)this.x,(float)this.y,12,11,150);
 
     }
 }
