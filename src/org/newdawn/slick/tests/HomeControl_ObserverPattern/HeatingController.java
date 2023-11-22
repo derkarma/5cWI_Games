@@ -1,4 +1,4 @@
-package org.newdawn.slick.tests.HomeControl;
+package org.newdawn.slick.tests.HomeControl_ObserverPattern;
 
 public class HeatingController implements Observer{
 

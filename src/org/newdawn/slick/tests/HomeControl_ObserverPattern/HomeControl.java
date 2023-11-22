@@ -1,4 +1,4 @@
-package org.newdawn.slick.tests.HomeControl;
+package org.newdawn.slick.tests.HomeControl_ObserverPattern;
 
 import java.util.ArrayList;
 import java.util.List;
